@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 body {
   background-color: #f4f4f6;
+  color: #9290a2;
 }
 
 * {
@@ -11,7 +12,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
-  color: #9290a2;
   font-weight: 300;
 }
 
@@ -138,6 +138,47 @@ header {
 svg {
   width: 15px;
   margin-right: 3px;
+}
+
+article.articleBody {
+  background: #f4f4f6;
+  width: auto;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: none;
+}
+
+article.articleBody > h1 {
+  color: #0a58bd;
+}
+
+main.article__main {
+  background: #f4f4f6;
+  box-shadow: none;
+  text-align: justify;
+  width: 90%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+a:link,
+a:visited {
+  color: #0a58bd;
+  text-decoration: none;
+}
+
+aside {
+  display: flex;
+  justify-content: space-around;
+  margin: 12px;
+  padding: 6px;
+  width: 90%;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=index.css.map */

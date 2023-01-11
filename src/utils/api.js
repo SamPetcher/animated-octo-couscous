@@ -12,4 +12,9 @@ export const fetchArticles = () => {
   return myApi.get(`/articles/`).then( (res) => {
     return res.data
   })
+}
+export const fetchArticle = (id) => {
+  return myApi.get(`/articles/${id}`).then( (res) => {
+    return res.data
+  })
 };

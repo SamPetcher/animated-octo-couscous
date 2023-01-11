@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import { fetchTopics } from "../utils/api.js"
+import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect } from "react";
 function Navbar() {
   const [topics, setTopics] = useState([])
   function iconSetter(topic) {
@@ -25,7 +26,7 @@ function Navbar() {
       <a>🏠 Home</a>
       {
         topics.map( (topic) => {
-          return <a>{iconSetter(topic.slug)}</a>
+          return <a key={uuidv4()}>{iconSetter(topic.slug)}</a>
         })
       }
     </nav>
