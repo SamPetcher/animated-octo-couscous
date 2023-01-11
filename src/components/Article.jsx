@@ -17,7 +17,6 @@ function ArticleView({ article }) {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     fetchArticle(article.article_id).then(( response ) => {
-      console.log(response, "should be article<<<");
       setArticleBody(response);
       setIsLoaded(true);
     });
