@@ -6,6 +6,7 @@ import UserSection from './components/UserSection';
 function App() {
   return (
     <div className="App">
+      <header className='hero'>Nooze   😴</header>
       <Navbar />      
       <ArticleList />
       <UserSection />

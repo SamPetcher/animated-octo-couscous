@@ -1,6 +1,8 @@
+@import "../src/styles/loaders.css";
+@import "../src/styles/hero.css";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 body {
-  background-color: #646175;
+  background-color: #f4f4f6;
 }
 
 * {
@@ -9,32 +11,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
-}
-
-nav {
-  border: solid 1px;
-  background: #f4f4f6;
-  min-width: 300px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  color: #9290a2;
+  font-weight: 300;
 }
 
 .App {
   margin-left: auto;
   margin-right: auto;
-  min-width: 350px;
-  width: 60%;
+  min-width: 200px;
+  max-width: 600px;
+  width: 95vw;
   border: none;
   padding: 10px;
-  background: #f4f4f6;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 main {
-  background: #c6ccc2;
-  border: solid 1px;
+  background: #f4f4f6;
   width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -42,10 +36,14 @@ main {
 article {
   margin: 12px;
   padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  width: auto;
   flex-direction: row;
   align-items: center;
-  background-color: #a29b90;
+  justify-content: center;
+  background-color: #f4f4f6;
   max-height: 200px;
 }
 
@@ -54,7 +52,7 @@ article > section {
   flex-direction: column;
   width: 80%;
   text-align: left;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 img {
@@ -98,17 +96,48 @@ footer {
 
 nav {
   display: flex;
-  background-color: #c3c2cc;
-  width: auto;
-  margin-top: 12px;
-  height: 50px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: #f4f4f6;
+  min-height: 50px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-icon {
+i {
   margin: 12px;
-  width: 64px;
+  margin-right: 24px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 12px;
+}
+
+section > h1 {
+  color: #0a58bd;
+}
+
+hr {
+  border: 1px solid black;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.1;
+}
+
+header {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #0a58bd;
+  color: white;
+  font-size: x-large;
+  padding: 12px;
+}
+
+svg {
+  width: 15px;
+  margin-right: 3px;
 }
 
 /*# sourceMappingURL=index.css.map */
