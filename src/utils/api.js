@@ -18,3 +18,8 @@ export const fetchArticle = (id) => {
     return res.data
   })
 };
+export const fetchComments = (id) => {
+  return myApi.get(`/articles/${id}/comments`).then( (res) => {
+    return res.data
+  })
+};

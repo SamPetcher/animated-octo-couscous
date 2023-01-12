@@ -181,4 +181,52 @@ aside {
   flex-wrap: wrap;
 }
 
+.article__comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.article__comment .CommentUI {
+  padding: 24px;
+  width: auto;
+}
+
+section > hr,
+div > hr {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+div > hr + span {
+  padding: 12px;
+}
+
+div > span + hr {
+  padding: 12px;
+}
+
+.votes {
+  border-radius: 0.9;
+  padding: 2px;
+  aspect-ratio: 1;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment__top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.comment__top > span {
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
 /*# sourceMappingURL=index.css.map */
