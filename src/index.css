@@ -229,4 +229,26 @@ div > span + hr {
   margin-top: 4px;
 }
 
+.likebutton {
+  background-color: hsl(80deg, 90%, 30%);
+  padding: 12px;
+  color: #f4f4f6;
+  border-top-right-radius: 0;
+  width: 90px;
+  border-bottom-right-radius: 0;
+}
+
+.dislikebutton {
+  background-color: hsl(10deg, 90%, 30%);
+  padding: 12px;
+  color: #f4f4f6;
+  border-top-left-radius: 0;
+  width: 90px;
+  border-bottom-left-radius: 0;
+}
+
+.voter {
+  display: flex;
+}
+
 /*# sourceMappingURL=index.css.map */
