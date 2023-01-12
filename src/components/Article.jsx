@@ -21,6 +21,10 @@ function ArticleView({ article }) {
       setIsLoaded(true);
     });
   }, []);
+
+  if (isLoaded === false) {
+    return <div className="loader"></div>;
+  } else {
     return (
     <article className='articleBody'>
       <h1>{articleBody.title}</h1>
@@ -34,7 +38,9 @@ function ArticleView({ article }) {
       
     </article>
   );
+  }
 }
+
 export default ArticleView
 
 
