@@ -23,3 +23,11 @@ export const fetchComments = (id) => {
     return res.data
   })
 };
+export const patchVotes = (vote, id) => {
+  return myApi.patch(`/articles/${id}/`, { inc_votes: vote})
+         .then( ({ data }) => {
+          return data.votes
+         })
+        .catch(err => alert(err))
+
+}

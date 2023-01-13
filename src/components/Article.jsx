@@ -1,6 +1,8 @@
-import { fetchArticle } from "../utils/api";
+import { fetchArticle, patchVotes } from "../utils/api";
 import CommentUI from "./CommentUI.jsx";
 import { useState, useEffect } from "react";
+
+import { v4 as uuidv4 } from "uuid";
 function iconSetter(topic) {
   switch (topic) {
     case "cooking":
@@ -13,9 +15,16 @@ function iconSetter(topic) {
       return "O";
   }
 }
+
 function ArticleView({ article }) {
   const [articleBody, setArticleBody] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  function votePatcher(newVotes) {
+    const newBody = structuredClone(articleBody);
+    newBody.votes = newVotes;
+    setArticleBody(newBody);
+  }
   useEffect(() => {
     fetchArticle(article.article_id).then((response) => {
       setArticleBody(response);
@@ -45,6 +54,35 @@ function ArticleView({ article }) {
             {articleBody.votes}
           </p>
         </aside>
+        <div className="voter">
+          {" "}
+          <button
+            onClick={(e) => {
+              e.currentTarget.disabled = true;
+              votePatcher(articleBody.votes + 1);
+              patchVotes(1, article.article_id).then((newVotes) => {
+                votePatcher(articleBody.votes - 1);
+                votePatcher(newVotes);
+              });
+            }}
+            className="likebutton"
+          >
+            News
+          </button>
+          <button
+            onClick={(e) => {
+              e.currentTarget.disabled = true;
+              votePatcher(articleBody.votes - 1);
+              patchVotes(-1, article.article_id).then((newVotes) => {
+                votePatcher(articleBody.votes + 1);
+                votePatcher(newVotes);
+              });
+            }}
+            className="dislikebutton"
+          >
+            Snooze
+          </button>
+        </div>{" "}
         <main className="article__main">{articleBody.body}</main>
         <CommentUI article={article} />
       </article>
