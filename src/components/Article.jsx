@@ -16,7 +16,6 @@ function iconSetter(topic) {
   }
 }
 
-
 function ArticleView({ article }) {
   const [articleBody, setArticleBody] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -58,24 +57,25 @@ function ArticleView({ article }) {
         <div className="voter">
           {" "}
           <button
-            key={uuidv4()}
-            onClick={() => {
-              votePatcher(articleBody.votes + 1)
+            onClick={(e) => {
+              e.currentTarget.disabled = true;
+              votePatcher(articleBody.votes + 1);
               patchVotes(1, article.article_id).then((newVotes) => {
-                votePatcher(articleBody.votes - 1)
-                votePatcher(newVotes)
-                              });
+                votePatcher(articleBody.votes - 1);
+                votePatcher(newVotes);
+              });
             }}
             className="likebutton"
           >
             News
           </button>
           <button
-            onClick={() => {
-              votePatcher(articleBody.votes - 1)
+            onClick={(e) => {
+              e.currentTarget.disabled = true;
+              votePatcher(articleBody.votes - 1);
               patchVotes(-1, article.article_id).then((newVotes) => {
-                votePatcher(articleBody.votes + 1)
-                votePatcher(newVotes)
+                votePatcher(articleBody.votes + 1);
+                votePatcher(newVotes);
               });
             }}
             className="dislikebutton"
