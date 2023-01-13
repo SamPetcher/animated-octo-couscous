@@ -31,3 +31,12 @@ export const patchVotes = (vote, id) => {
         .catch(err => alert(err))
 
 }
+export const postCommentData = (comment , id) => {
+  return myApi.post(`/articles/${id}/comments`, comment)
+         .then( ({ data }) => {
+          console.log(data)
+          return data
+         })
+        .catch(err => alert(err))
+
+}
