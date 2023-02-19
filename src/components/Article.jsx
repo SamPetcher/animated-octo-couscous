@@ -2,7 +2,6 @@ import { fetchArticle, patchVotes } from "../utils/api";
 import CommentUI from "./CommentUI.jsx";
 import { useState, useEffect } from "react";
 
-import { v4 as uuidv4 } from "uuid";
 function iconSetter(topic) {
   switch (topic) {
     case "cooking":
@@ -30,7 +29,7 @@ function ArticleView({ article }) {
       setArticleBody(response);
       setIsLoaded(true);
     });
-  }, []);
+  }, [article.article_id]);
 
   if (isLoaded === false) {
     return <div className="loader"></div>;

@@ -1,6 +1,5 @@
 import { fetchTopics } from "../utils/api.js"
 import { Link } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid';
 import { useState, useEffect } from "react";
 function Navbar() {
   const [topics, setTopics] = useState([])
@@ -27,7 +26,7 @@ function Navbar() {
       <Link to="/">🏠 Home</Link>
       {
         topics.map( (topic) => {
-          return <a key={uuidv4()}>{iconSetter(topic.slug)}</a>
+          return iconSetter(topic.slug)
         })
       }
     </nav>
